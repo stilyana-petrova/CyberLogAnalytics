@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberLog Analytics Report</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+    color: #24332c;
+    background: #f5f4ed;
+    line-height: 1.6;
+}
+h1, h2 { color: #315c48; }
+.card {
+    background: white;
+    padding: 20px;
+    margin: 18px 0;
+    border-radius: 10px;
+}
+.metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.metric {
+    background: #e4eadf;
+    padding: 16px;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 170px;
+}
+.metric strong { display: block; font-size: 1.5em; }
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background: white;
+}
+th, td {
+    border: 1px solid #d5ddd4;
+    padding: 10px;
+    text-align: left;
+}
+th { background: #dfe8dd; }
+.chart { margin: 25px 0; }
+.chart img { width: 100%; max-width: 850px; height: auto; }
+footer { color: #59685f; margin: 30px 0; }
+</style>
+</head>
+<body>
+<h1>CyberLog Analytics</h1>
+<p>Automated Security Log Analysis Report</p>
+<p>Generated: 2026-10-27 19:14:55 FLE Standard Time</p>
+
+<section class="card">
+<h2>Dataset Overview</h2>
+<div class="metrics">
+<div class="metric">
+Records processed
+<strong>500,000</strong>
+</div>
+<div class="metric">
+Failed logins
+<strong>99,728</strong>
+</div>
+<div class="metric">
+Suspicious events
+<strong>75,282</strong>
+</div>
+<div class="metric">
+Total data transferred
+<strong>2,522,951,864 bytes</strong>
+</div>
+</div>
+</section>
+
+<section class="card">
+<h2>Events by Type</h2>
+<table><thead><tr><th>Event Type</th><th>Count</th></tr></thead><tbody><tr><td>successful_login</td><td>250,175</td></tr><tr><td>failed_login</td><td>99,728</td></tr><tr><td>file_access</td><td>49,806</td></tr><tr><td>port_scan</td><td>40,255</td></tr><tr><td>suspicious_connection</td><td>35,027</td></tr><tr><td>privilege_change</td><td>25,009</td></tr></tbody></table>
+</section>
+
+<section class="card">
+<h2>Events by Severity</h2>
+<table><thead><tr><th>Severity</th><th>Count</th></tr></thead><tbody><tr><td>low</td><td>209,894</td></tr><tr><td>high</td><td>160,354</td></tr><tr><td>medium</td><td>129,752</td></tr></tbody></table>
+</section>
+
+<section class="card">
+<h2>Events by Status</h2>
+<table><thead><tr><th>Status</th><th>Count</th></tr></thead><tbody><tr><td>success</td><td>324,990</td></tr><tr><td>failure</td><td>99,728</td></tr><tr><td>suspicious</td><td>75,282</td></tr></tbody></table>
+</section>
+
+<section class="card">
+<h2>Top 10 IPs by Failed Logins</h2>
+<table><thead><tr><th>Source IP</th><th>Failed Logins</th></tr></thead><tbody><tr><td>192.168.15.65</td><td>13,225</td></tr><tr><td>10.13.150.31</td><td>13,131</td></tr><tr><td>192.168.44.131</td><td>12,928</td></tr><tr><td>10.52.122.63</td><td>12,850</td></tr><tr><td>192.168.140.208</td><td>12,813</td></tr><tr><td>192.168.226.83</td><td>66</td></tr><tr><td>172.29.242.94</td><td>51</td></tr><tr><td>10.196.175.73</td><td>51</td></tr><tr><td>10.89.34.116</td><td>51</td></tr><tr><td>172.29.167.220</td><td>50</td></tr></tbody></table>
+</section>
+
+<section class="card">
+<h2>Visualizations</h2>
+<div class="chart"><h3>Security Events by Type</h3><img src="events_by_type.png" alt="Security Events by Type"></div><div class="chart"><h3>Security Events by Severity</h3><img src="events_by_severity.png" alt="Security Events by Severity"></div><div class="chart"><h3>Distribution of Event Statuses</h3><img src="events_by_status.png" alt="Distribution of Event Statuses"></div><div class="chart"><h3>Top Source IPs by Failed Logins</h3><img src="top_failed_login_ips.png" alt="Top Source IPs by Failed Logins"></div>
+</section>
+
+<section class="card">
+<h2>Execution Time Comparison</h2>
+<p>Times are measured separately by each analysis module. The Python
+baseline is measured during report generation. Results depend on the
+machine, environment, and implementation.</p>
+<table>
+<thead><tr><th>Technology</th><th>Execution Time</th></tr></thead>
+<tbody><tr><td>Python (baseline)</td><td>1.9866 seconds</td></tr><tr><td>Dask</td><td>0.8326 seconds</td></tr><tr><td>PySpark</td><td>12.9739 seconds</td></tr><tr><td>Ray</td><td>3.1180 seconds</td></tr></tbody>
+</table>
+</section>
+
+<section class="card">
+<h2>Analysis Conclusions</h2>
+<ul><li>The most common event type is &#x27;successful_login&#x27;, with 250,175 records.</li><li>160,354 events (32.07%) are classified as high severity.</li><li>The dataset contains 99,728 failed-login events and 75,282 events with suspicious status.</li><li>The source IP with the most failed logins is 192.168.15.65, with 13,225 attempts.</li><li>These are synthetic training data. A high event count is an indicator for further investigation, not proof of an attack.</li></ul>
+</section>
+
+<footer>
+CyberLog Analytics is an educational project using synthetic log data.
+Its results do not establish that real systems have been attacked.
+</footer>
+</body>
+</html>

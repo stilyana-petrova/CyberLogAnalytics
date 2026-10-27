@@ -1,0 +1,29 @@
+CYBERLOG ANALYTICS - RAY RESULTS
+Total records: 500,000
+Ray tasks: 20
+Execution time: 3.1180 seconds
+
+Events by type:
+successful_login: 250,175
+failed_login: 99,728
+file_access: 49,806
+port_scan: 40,255
+suspicious_connection: 35,027
+privilege_change: 25,009
+
+Events by severity:
+low: 209,894
+high: 160,354
+medium: 129,752
+
+Top 10 IPs by failed logins:
+192.168.15.65: 13,225 failed logins
+10.13.150.31: 13,131 failed logins
+192.168.44.131: 12,928 failed logins
+10.52.122.63: 12,850 failed logins
+192.168.140.208: 12,813 failed logins
+192.168.226.83: 66 failed logins
+172.29.242.94: 51 failed logins
+10.196.175.73: 51 failed logins
+10.89.34.116: 51 failed logins
+172.29.167.220: 50 failed logins
